@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi Literasi: Tema 1, 2, & 3</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #eef2f3;
+            color: #333;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        /* Top Navigation Styling */
+        .top-nav {
+            background: #fff;
+            padding: 15px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            gap: 15px;
+        }
+        .top-nav label {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #2c3e50;
+        }
+        .top-nav select {
+            padding: 8px 12px;
+            font-size: 1em;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            max-width: 400px;
+        }
+        .presentation-container {
+            flex-grow: 1;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .slide {
+            display: none;
+            background: #fff;
+            width: 100%;
+            max-width: 960px;
+            height: 75vh;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow-y: auto;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+        .slide.active {
+            display: block;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-top: 10%;
+        }
+        h2 {
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        p, li {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        ul, ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .question-box {
+            background-color: #f8f9fa;
+            border-left: 5px solid #e74c3c;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .answer-box {
+            background-color: #e8f8f5;
+            border-left: 5px solid #2ecc71;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            background: #fff;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+            gap: 20px;
+        }
+        button {
+            padding: 10px 25px;
+            font-size: 1.1em;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #3498db;
+            color: white;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        button:disabled {
+            background-color: #bdc3c7;
+            cursor: not-allowed;
+        }
+        #slide-counter {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-nav">
+        <label for="slideSelect">Lompat ke Slide:</label>
+        <select id="slideSelect" onchange="jumpToSlide(this.value)">
+            </select>
+    </div>
+
+    <div class="presentation-container">
+        
+        <div class="slide active">
+            <h1>MATERI LITERASI: TEMA 1, 2, & 3</h1>
+            <p style="text-align: center; font-size: 1.5em; color: #7f8c8d;">Menemukan Informasi, Interpretasi & Integrasi, serta Evaluasi & Refleksi</p>
+        </div>
+
+        <div class="slide">
+            <h2>TEMA 1: MENEMUKAN INFORMASI</h2>
+            <h3>Mencari Informasi</h3>
+            <p>Mencari informasi adalah usaha untuk mendapatkan penerangan, kabar, atau berita tentang suatu kejadian peristiwa yang terjadi.</p>
+            <p>Kegiatan mencari informasi dalam teks tidak hanya sekedar mencari, tetapi juga <strong>memahami isi bacaan</strong> yang terkandung di dalamnya. Memahami informasi memungkinkan kita untuk menjawab pertanyaan-pertanyaan yang berkaitan dengan teks bacaan.</p>
+        </div>
+
+        <div class="slide">
+            <h2>Cara Efektif Menemukan Informasi (Bagian 1)</h2>
+            <ol>
+                <li><strong>Membaca Judul</strong>
+                    <p>Judul merupakan identitas dari sebuah bacaan baik itu dari buku atau berita, sekaligus cerminan dari keseluruhan bacaan.</p>
+                    <p>Dengan membaca judul, kita bisa mendapat sedikit gambaran tentang apa yang akan dibahas pada sebuah teks.</p>
+                </li>
+            </ol>
+        </div>
+
+        <div class="slide">
+            <h2>Cara Efektif Menemukan Informasi (Bagian 2)</h2>
+            <ol start="2">
+                <li><strong>Teknik Skimming dan Scanning</strong>
+                    <ul>
+                        <li><strong>Skimming:</strong> Teknik yang digunakan untuk membaca cepat atau sekilas. Teknik ini melatih gerak bola mata untuk membaca, memperhatikan, dan menemukan informasi dalam teks.</li>
+                        <li><strong>Scanning:</strong> Teknik membaca memindai untuk mendapatkan informasi spesifik dari bacaan. Teknik ini biasanya digunakan ketika kita telah mengetahui apa yang ingin dicari dan mengkonfirmasi kebenarannya.</li>
+                    </ul>
+                    <p>Kedua teknik ini sangat membantu untuk menemukan informasi dalam teks dengan waktu yang cepat, namun perlu pembiasaan dan harus dilatih secara terus-menerus.</p>
+                </li>
+            </ol>
+        </div>
+
+        <div class="slide">
+            <h2>Cara Efektif Menemukan Informasi (Bagian 3)</h2>
+            <ol start="3">
+                <li><strong>Memberikan Highlight pada Kata yang Penting</strong>
+                    <p>Berilah tanda pada kata-kata yang penting bisa dengan memberi <span class="highlight">warna berbeda</span> atau <u>menggarisbawahi</u> kata tersebut.</p>
+                    <p>Tujuannya adalah untuk mempermudah menemukan informasi tersebut jika ditanyakan pada soal-soal berikutnya.</p>
+                    <p>Highlight juga bisa diberikan pada gagasan utama pada sebuah paragraf, kata bercetak tebal/miring, atau kalimat yang bersifat menjawab pertanyaan 5W1H agar dapat menghemat waktu.</p>
+                </li>
+            </ol>
+        </div>
+
+        <div class="slide">
+            <h2>TEMA 2: INTERPRETASI DAN INTEGRASI</h2>
+            <h3>Definisi</h3>
+            <p>Interpretasi dan integrasi merupakan kemampuan memahami informasi tersirat atau tersurat, serta memadukan antar bagian teks untuk menghasilkan inferensi.</p>
+            <ul>
+                <li><strong>Interpretasi:</strong> Memiliki arti penafsiran tentang suatu hal yang berhubungan dengan pemahaman. Dalam sebuah teks, interpretasi biasanya berada di bagian paragraf penutup. Interpretasi berisi kesimpulan dari suatu kejadian pada teks bacaan dan juga berupa simpulan dari hubungan sebab akibat pada kalimat-kalimat sebelumnya.</li>
+                <li><strong>Integrasi:</strong> Menurut KBBI, integrasi adalah pembauran hingga menjadi kesatuan yang utuh atau bulat.</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h2>Langkah Menemukan Kesimpulan (Inferensi)</h2>
+            <p>Jadi, interpretasi yang dikumpulkan pada bacaan kemudian disatukan (diintegrasikan) menjadi sebuah kesimpulan yang utuh dan bulat untuk menghasilkan sebuah inferensi.</p>
+            <h3>Langkah-langkah:</h3>
+            <ol>
+                <li><strong>Baca teks dengan teliti dan temukan ide pokoknya:</strong> Bacalah teks dengan teliti dan coba temukan ide pokok pada setiap paragraf yang dibaca.</li>
+                <li><strong>Integrasikan setiap ide pokok yang didapat:</strong> Setelah mendapat ide pokok dari setiap paragraf, integrasikan atau jadikan semua ide pokok tersebut menjadi satu sehingga menghasilkan sebuah kesimpulan.</li>
+                <li><strong>Menarik kesimpulan (inferensi) dari interpretasi yang didapat:</strong> Setelah seluruh ide pokok didapatkan dan dijadikan satu maka akan muncul inferensi. Inferensi (kesimpulan) merupakan perpaduan dari seluruh interpretasi yang didapat saat membaca sebuah teks.</li>
+            </ol>
+        </div>
+
+        <div class="slide">
+            <h2>TEMA 3: EVALUASI DAN REFLEKSI</h2>
+            <h3>Definisi dan Tujuan</h3>
+            <p>Tema ini mengukur tingkat pemahaman tertinggi dari sebuah literasi teks.</p>
+            <ul>
+                <li><strong>Evaluasi (KBBI):</strong> Penilaian.</li>
+                <li><strong>Refleksi:</strong> Gerakan, pantulan di luar kemauan (kesadaran) sebagai jawaban atas suatu hal atau kegiatan yang datang dari luar.</li>
+            </ul>
+            <h3>Tipe Soal:</h3>
+            <p>Pada tipe soal tema evaluasi dan refleksi, kita diukur kemampuan untuk memberikan penilaian serta diukur seberapa mampu kita mengaitkan isi teks dengan hal lain yang berada dari luar teks tersebut.</p>
+        </div>
+
+        <div class="slide">
+            <h2>TEMA 1 - Teks Latihan (Tanaman Kopi)</h2>
+            <p>Tanaman kopi umumnya berdaun hijau sepanjang tahun, berbunga putih, dan menghasilkan buah kopi yang mirip dengan buah ceri namun terbungkus dengan cangkang yang keras. Pemanenan buah kopi dari tandannya biasanya dilakukan secara manual, dipilih buah yang matang dan berwarna merah. Biji kopi kemudian dipisahkan dari kulit buah dan cangkangnya melalui penggilingan langsung atau dikeringkan terlebih dahulu di bawah sinar matahari.</p>
+        </div>
+
+        <div class="slide">
+            <h2>TEMA 1 - Teks Latihan (Tanaman Kopi - Lanjutan)</h2>
+            <p>Rasa nikmat minuman kopi sangat ditentukan oleh suhu pemanasan dan tingkat kegosongan selama pemanggangan, selain juga ditentukan oleh jenis pohon kopinya. Di Indonesia dikenal dua jenis kopi, yaitu Arabica dan Robusta. Biji kopi Arabica mempunyai ukuran agak besar, pipih, sedikit memanjang, dan agak rapuh. Di lain pihak, biji kopi Robusta berukuran lebih kecil, berbentuk bulat, dan terlihat padat. Tanaman kopi Arabica tidak tahan panas dan rentan terhadap penyakit, namun cita rasa kopi Arabica lebih banyak disukai masyarakat.</p>
+        </div>
+
+        <div class="slide">
+            <h2>TEMA 1 - Teks Latihan (Tanaman Kopi - Zat Aktif)</h2>
+            <p>Zat aktif yang terdapat dalam biji kopi disebut kafein. Zat ini berasa pahit dan dipercaya dapat memberikan efek stimulasi terhadap sistem saraf pusat, seperti mengurangi rasa kantuk, mengurangi rasa lelah, meningkatkan stamina tubuh, meningkatkan daya tangkap panca indera, dan meningkatkan detak jantung. Dekafeinasi merupakan modifikasi produk kopi untuk mengurangi kadar kafein dan meningkatkan cita rasa kopi. Beberapa metode yang dapat dilakukan dalam dekafeinasi antara lain melalui ekstraksi menggunakan air, pelarut kimia, karbondioksida superkritis, dan minyak biji bunga matahari. Dekafeinasi juga dapat dilakukan menggunakan arang aktif, mikroorganisme, atau enzim tertentu. Gas CO2 banyak terdapat di udara dan ekstraksi dengan pelarut CO2 superkritis dapat mengurangi kadar kafein dalam biji kopi hingga 96% namun teknologi pengerjaannya memerlukan biaya yang tinggi.</p>
+        </div>
+
+        <div class="slide">
+            <h2>Soal 1 - 3 (Tema 1: Tanaman Kopi)</h2>
+            <div class="question-box">
+                <p><strong>Soal 1:</strong> Dekafeinasi dengan metode ekstraksi yang mahal namun efektif untuk mengurangi kadar kafein dalam biji kopi adalah..</p>
+                <p>A. Menggunakan pelarut air / B. Menggunakan pelarut kimia / C. Menggunakan karbondioksida superkritis / D. Memanfaatkan mikroorganisme / E. Memanfaatkan enzim sebagai biokatalis</p>
+            </div>
+            <div class="question-box">
+                <p><strong>Soal 2:</strong> Salah satu ciri khas kopi Arabica adalah ...</p>
+                <p>A. Biji kopinya berukuran agak besar dan berbentuk pipih / B. Tekstur biji kopinya berbentuk bulat dan terlihat padat / C. Kandungan kafeinnya lebih tinggi dibandingkan Robusta / D. Tanaman kopinya tahan terhadap hama dan penyakit / E. Cita rasa minuman kopinya kurang disukai masyarakat.</p>
+            </div>
+            <div class="question-box">
+                <p><strong>Soal 3:</strong> Efek berikut BUKAN merupakan akibat konsumsi kafein adalah...</p>
+                <p>A. Mengurangi rasa kantuk / B. Mengurangi rasa lelah / C. Menurunkan detak jantung / D. Meningkatkan daya tangkap pancaindera / E. Meningkatkan stamina tubuh</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>Pembahasan Soal 1 - 3</h2>
+            <div class="answer-box">
+                <p><strong>Jawaban Soal 1: C</strong></p>
+                <p><strong>Pembahasan:</strong> Pada paragraf ketiga tertulis, "...ekstraksi dengan pelarut CO2 superkritis dapat mengurangi kadar kafein dalam biji kopi hingga 96% namun teknologi pengerjaannya memerlukan biaya yang tinggi."</p>
+            </div>
+            <div class="answer-box">
+                <p><strong>Jawaban Soal 2: A</strong></p>
+                <p><strong>Pembahasan:</strong> Pada paragraf kedua disebutkan secara eksplisit ciri-ciri kopi Arabica: "Biji kopi Arabica mempunyai ukuran agak besar, pipih, sedikit memanjang, dan agak rapuh."</p>
+            </div>
+            <div class="answer-box">
+                <p><strong>Jawaban Soal 3: C</strong></p>
+                <p><strong>Pembahasan:</strong> Pada paragraf ketiga dijelaskan bahwa efek stimulasi kafein adalah "meningkatkan detak jantung", bukan menurunkan. Pilihan C bertentangan dengan isi teks.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>TEMA 1 - Teks Soal 4 (Teknologi Informasi)</h2>
+            <p>Teknologi informasi dan komunikasi terus berkembang sehingga kemudahan akses dan ragam informasi semakin meningkat. Produksi dan distribusi informasi berupa teks, gambar, suara dan video melalui fitur perangkat digital dan beragam aplikasi dapat diakses hanya dengan sentuhan jari. Informasi yang tidak diinginkan pun datang sendiri melalui grup sekarang menjadi melimpah ruah.</p>
+            <p>Survei APJII (2022) menyebutkan tingkat penetrasi internet di Indonesia pada 2022 sebesar 99,02%. Dua aplikasi yang paling sering diakses adalah media sosial (89,19%) dan percakapan daring (73,86%). Dua aplikasi tersebut merupakan sumber produksi konten terbesar di ruang digital. Internetvestat (2023) melaporkan per hari sekitar 727 juta tweet dikirimkan, 8,5 juta gambar diunggah ke Instagram, 7 juta tulisan dikirimkan ke situs daring. Semua itu tentu mengandung Informasi, entah valid atau hoaks, entah edukatif atau destruktif.</p>
+        </div>
+
+        <div class="slide">
+            <h2>Soal 4 (Teknologi Informasi)</h2>
+            <p>Tantangan terbesar bukan terletak pada usaha mendapatkan akses, melainkan pada bagaimana menyaring limpahan informasi hingga mendapatkan intisarinya. Menyaring informasi bukan sekedar memberikan batasan dengan menggunakan kata kunci tertentu, melainkan juga memilih antara yang valid dan tidak valid.</p>
+            <div class="question-box">
+                <p><strong>Soal 4:</strong> Data tentang sumber produksi konten terbesar di ruang digital tergambar dalam persentase...</p>
+                <p>A. Tingkat penetrasi internet<br>B. Konten yang paling sering diakses<br>C. Tweet yang dikirim ke media sosial<br>D. Gambar yang diunggah ke media sosial<br>E. Tulisan yang dikirimkan ke situs daring</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>Pembahasan Soal 4</h2>
+            <div class="answer-box">
+                <p><strong>Jawaban: B</strong></p>
+                <p><strong>Pembahasan:</strong> Disebutkan persentase media sosial (89,19%) dan percakapan daring (73,86%) sebagai sumber produksi konten terbesar.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>TEMA 1 - Teks Soal 5 (Otomatisasi)</h2>
+            <p>Pada era Revolusi Industri 4.0, di semua lini mulai dilakukan otomatisasi. Otomatisasi adalah penggantian tenaga manusia dengan tenaga mesin yang secara otomatis dapat melakukan dan mengatur pekerjaan sehingga tidak diperlukan lagi pengawasan manusia. Hasil penelitian McKinsey menemukan bahwa otomatisasi memberikan tiga manfaat. Pertama, berpotensi meningkatkan produksi dan pertumbuhan produk domestic bruto (PDB) negara. Kedua, menghasilkan pendapatan yang lebih tinggi bagi pekerja Indonesia. Ketiga, menciptakan peluang pasar bagi perusahaan.</p>
+            <p>Otomatisasi parsial pekerjaan cenderung menjadi hal yang umum, sedangkan otomatisasi penuh memiliki kemungkinan lebih kecil terjadi di Indonesia. Otomatisasi juga memberikan dampak sosial negatif pada masyarakat, antara lain meningkatnya angka pengangguran karena banyak buruh akan kehilangan pekerjaan. Untuk menghindari terjadinya keresahan sosial pemerintah mulai melakukan berbagai program pelatihan untuk meningkatkan kualitas tenaga kerja manusia.</p>
+        </div>
+
+        <div class="slide">
+            <h2>Soal 5 (Otomatisasi)</h2>
+            <div class="question-box">
+                <p><strong>Soal 5:</strong> Dampak negatif otomatisasi bagi masyarakat terutama dalam bidang pekerjaan adalah ...</p>
+                <p>A. Menghilangnya profesi lama berpotensi melahirkan keresahan sosial<br>B. Permintaan mesin baru dalam proses otomatisasi menjadi biaya tinggi<br>C. Kenaikan permintaan tenaga kerja di luar sektor industri manufaktur<br>D. Berubahnya beberapa jenis pekerjaan lama menjadi pekerjaan baru<br>E. Berkurangnya permintaan tenaga kerja</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>Pembahasan Soal 5</h2>
+            <div class="answer-box">
+                <p><strong>Jawaban: E</strong></p>
+                <p><strong>Pembahasan:</strong> Tertulis dampak negatif adalah "meningkatnya angka pengangguran karena banyak buruh akan kehilangan pekerjaan." Hal ini sejalan dengan berkurangnya permintaan tenaga kerja manusia.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>TEMA 1 - Teks Soal 6 (Smart City)</h2>
+            <p>Smart city (kota pintar) dapat diartikan dengan sederhana sebagai kota yang bisa meningkatkan mutu hidup baik dan kedamaian terhadap masyarakatnya. Dalam smart city atau masyarakat kota yang cerdas, tidak hanya mengacu pada intelegensi seseorang, tetapi juga kualitas interaksi sosial yang terbentuk di dalam kota tersebut.</p>
+            <p>Upaya menjadikan kota pintar ini dilakukan lewat beberapa program di antaranya penerapan internet of things dan cloud computing (komputasi awan) untuk mengantisipasi ataupun yang lainnya yang membuat server fisik mengalami kerusakan. Salah satu bagian terpenting dari smart city adalah mendorong interaksi masyarakat online (netizen) terhadap pemerintah. Pemerintah perlu melihat bagaimana interaksi menggunakan media sosial sehingga pemerintah bisa melakukan inovasi dan pembangunan dalam mewujudkan kota pintar.</p>
+        </div>
+
+        <div class="slide">
+            <h2>Soal 6 (Smart City)</h2>
+            <p>Masyarakat akan banyak memberikan pendapat dengan respons secara positif oleh pemerintah untuk kemajuan. Untuk itu, diperlukan edukasi literasi internet yang baik dan mengedepankan sopan santun dalam bertutur kata dan menggunakan media sosial serta internet dengan bijak.</p>
+            <div class="question-box">
+                <p><strong>Soal 6:</strong> Berdasarkan bacaan, kota pintar diartikan sebagai kota yang....</p>
+                <p>A. Memiliki fasilitas publik yang semuanya dikendalikan oleh internet.<br>B. Memiliki smart people yang saling berjejaring di dunia maya.<br>C. Mempunyai kualitas hidup dan kesejahteraan yang baik.<br>D. Mempunyai arah kebijakan dan strategi pembangunan digital<br>E. Mempunyai pemerintahan yang terbuka menerima kritik netizen</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>Pembahasan Soal 6</h2>
+            <div class="answer-box">
+                <p><strong>Jawaban: C</strong></p>
+                <p><strong>Pembahasan:</strong> Kalimat pertama paragraf pertama menyatakan kota pintar meningkatkan mutu hidup baik dan kedamaian.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>TEMA 2 - Teks Soal 1 (Homo Homini Socius)</h2>
+            <p>Belum lama ini kita dikejutkan dengan berita korupsi dana bantuan semakin menambah panjang deret serupa. Sebagian masyarakat berkomentar, sudah separah itukah nurani kita sebagai manusia? Dana bantuan sosial yang mestinya digunakan untuk membantu warga, tetapi malah dikorupsi. Apakah ini gambaran nyata dari apa yang pernah dinyatakan Thomas Hobbes, filsuf Inggris, yang dikenal dengan ungkapan Homo Homini Lupus. Manusia adalah serigala bagi manusia lainnya. Manusia saling menikam sesamanya.</p>
+            <p>Jika kita mengamati lebih dalam, dunia binatang justru memberikan banyak pelajaran hidup bagi umat manusia. Gambaran itu bisa kita saksikan melalui tayangan video program New Atlantis Wild. Dalam video tersebut disajikan adegan katak yang terperangkap dalam jaring laba-laba. Meski katak bertubuh besar, jaring laba-laba itu tidak membunuh katak karena telah merusak perangkapnya. Laba-laba melepaskan jeratan katak dan membiarkan tetap hidup.</p>
+        </div>
+
+        <div class="slide">
+            <h2>Soal 1 (Homo Homini Socius)</h2>
+            <p>Laba-laba tidak serakah untuk mengambil apa yang bukan haknya, ia seolah menjadi teman bagi sesamanya, menolong katak yang terjerat menunggu nasib. Apakah kita bisa menirunya? Mampukah kita menunjukkan diri sebagai teman bagi sesama? Alih-alih menjadi Homo Homini Lupus, alangkah elok bila kita menjadi sosok seperti yang diungkapkan Seneca, filsuf Romawi, Homo Homini Socius. Manusia adalah teman bagi sesama manusia.</p>
+            <div class="question-box">
+                <p><strong>Soal 1:</strong> Simpulan yang tepat isi bacaan di atas adalah ...</p>
+                <p>A/B (Opsi lain) ...<br>C. Manusia harus mampu menggunakan nuraninya dalam bertindak dan berperilaku dengan menghargai dan menghormati sesama<br>D/E (Opsi lain) ...</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>Pembahasan Soal 1</h2>
+            <div class="answer-box">
+                <p><strong>Jawaban: C</strong></p>
+                <p><strong>Pembahasan:</strong> Kesimpulan gabungan adalah manusia harus menggunakan nurani untuk saling menghargai seperti prinsip Homo Homini Socius.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>TEMA 2 - Teks Soal 2 (Novel Sri)</h2>
+            <p>Setelah tidur lelap, esok pagi-pagi Sri mulai menyusun rencana. Dengan asumsi terus tinggal di penginapan ini, uang yang dia bawa cukup untuk tiga bulan ke depan membayar sewanya. Jika dia berhemat dengan pindah menyewa apartemen bulanan yang lebih murah, mungkin bisa membuatnya bertahan hingga lima-enam bulan. Sri melingkari tanggal, seandainya, sambil menghabiskan roti tawar. Semakin cepat dia memperoleh pekerjaan, situasi akan semakin baik.</p>
+            <p>Sri menyalin lima-enam lowongan pekerjaan di kertas. Pukul tujuh pagi dia turun ke meja tamu hotel, mengembalikan surat kabar. Sri mengucapkan terima kasih, menuju pintu penginapan, dia mulai mencari pekerjaan. Itulah rutinitas yang dilakukan Sri. Bedanya dengan dulu setiba di Jakarta, kali ini di tidak perlu berjalan kaki. Sri menumpang sistem transportasi massal Kota London yang nyaman. Setiap hari, dia berpindah-pindah dari satu tempat ke tempat lain, bertanya lowongan pekerjaan, baru pukul enam atau tujuh malam kembali ke penginapan. Dua minggu berlalu dengan cepat. Nihil. Ini yang sama dengan di Jakarta dulu.</p>
+        </div>
+
+        <div class="slide">
+            <h2>Soal 2 (Novel Sri)</h2>
+            <div class="question-box">
+                <p><strong>Soal 2:</strong> Tema kutipan novel tersebut adalah ...</p>
+                <p>A. Perjuangan seorang perempuan di negara seberang untuk mencari pekerjaan di Indonesia dan Inggris<br>B. Perjalanan gigih seorang perempuan untuk mengubah kehidupan yang lebih baik meskipun banyak rintangan<br>C. Perubahan kehidupan seseorang ketika berjuang mendapat pekerjaan di Indonesia dan Inggris<br>D. Perbedaan perjuangan seseorang untuk mencari pekerjaan di dua negara karena budaya yang berbeda<br>E. Perasaan seseorang dalam menjalani kehidupan yang selalu berpindah tempat tanpa persiapan</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>Pembahasan Soal 2</h2>
+            <div class="answer-box">
+                <p><strong>Jawaban: B</strong></p>
+                <p><strong>Pembahasan:</strong> Teks menceritakan kegigihan Sri mencari pekerjaan di London setiap hari meskipun hasilnya masih nihil.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>TEMA 2 - Teks Soal 3 - 5 (Kereta Maglev)</h2>
+            <p>Kereta maglev (magnetic levitation) adalah kereta api yang mengambang di atas rel. Kereta maglev mengambang dan bergerak berdasarkan tarikan dan tolakan elektromagnetik, seperti dua kutub magnet sejenis tolak menolak dan dua kutub magnet berbeda jenis tarik menarik. Tidak adanya kontak dengan rel membuat gesekan sangat kecil sehingga kereta dapat bergerak dengan tenang, halus, dan cepat. Ada dua sistem teknologi maglev, yaitu sistem suspense elektromagnetik (SSE) dan sistem suspense elektrodinamik (SSD).</p>
+        </div>
+
+        <div class="slide">
+            <h2>TEMA 2 - Teks Soal 3 - 5 (SSE vs SSD)</h2>
+            <p>Di dalam SSE, pada bagian bawah kereta di kedua sisi dipasang bogie berbentuk huruf C sehingga posisi rel berada di atas ujung bogie. Ketika dialiri listrik, terjadi tarik-menarik dengan rel sehingga kereta mengambang 1.5 cm. SSE kurang stabil dibanding SSD. Di dalam SSD, rel dipasang elektromagnet dan kereta dipasang magnet permanen. Terjadi tolak-menolak yang mengangkat kereta 10 cm. SSD memerlukan roda untuk kelajuan rendah. Kereta maglev ramah lingkungan namun jalurnya khusus dan biaya pembangunannya mahal.</p>
+        </div>
+
+        <div class="slide">
+            <h2>Soal 3 - 5 (Maglev)</h2>
+            <div class="question-box">
+                <p><strong>Soal 3:</strong> Pernyataan di bawah ini yang merupakan ... adalah (Sesuai dengan teks)</p>
+                <p>C. Mengembangkan kereta sistem SSD yang melayang 10 cm di atas rel</p>
+            </div>
+            <div class="question-box">
+                <p><strong>Soal 4:</strong> Kelemahan SSD dibandingkan SSE adalah...</p>
+                <p>B. Tidak dapat melayang pada awal geraknya</p>
+            </div>
+            <div class="question-box">
+                <p><strong>Soal 5:</strong> Alasan utama kereta maglev dikembangkan adalah ...</p>
+                <p>E. Tidak ada pengaruh gesekan</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>Pembahasan Soal 3 - 5</h2>
+            <div class="answer-box">
+                <p><strong>Pembahasan:</strong><br>* (3) Sesuai paragraf ketiga.<br>* (4) Karena butuh roda saat kelajuan rendah.<br>* (5) Gesekan kecil membuat kereta tenang, halus, dan cepat.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>TEMA 2 - Soal 6 (Otomatisasi)</h2>
+            <div class="question-box">
+                <p><strong>Soal 6:</strong> Dampak yang didapatkan dari otomatisasi industri bagi negara adalah ...</p>
+                <p>A. Diprediksi akan menciptakan peluang pasar baru<br>B. Berpotensi meningkatkan pertumbuhan PDB<br>C. Cenderung meningkatkan permintaan tenaga kerja<br>D. Berpotensi meningkatkan pendapatan tenaga kerja<br>E. Meningkatkan pertumbuhan industri lokal</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>Pembahasan Soal 6</h2>
+            <div class="answer-box">
+                <p><strong>Jawaban: B</strong></p>
+                <p><strong>Pembahasan:</strong> Berdasarkan manfaat pertama menurut McKinsey yaitu potensi meningkatkan PDB negara.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>TEMA 3 - Soal 1 (Smart City - Evaluasi)</h2>
+            <div class="question-box">
+                <p><strong>Soal 1:</strong> Upaya yang perlu dilakukan untuk menciptakan smart people di dalam kota pintar adalah ...</p>
+                <p>A/B/C (Opsi lain) ...<br>D. Memberikan edukasi literasi digital yang cerdas, kritis, dan beradab.<br>E (Opsi lain) ...</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>Pembahasan Soal 1</h2>
+            <div class="answer-box">
+                <p><strong>Jawaban: D</strong></p>
+                <p><strong>Pembahasan:</strong> Kalimat terakhir teks menyebutkan perlunya edukasi literasi internet yang baik dan sopan santun.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>TEMA 3 - Teks Soal 2 (Kapal Selam)</h2>
+            <p>Kapal selam mampu mendorong dirinya di bawah/permukaan air. Selain untuk perang, kapal selam digunakan untuk riset biologi, kelautan, inspeksi fasilitas bawah laut, pariwisata, dan arkeologi. Wisata bawah laut biasanya berada di zona photic (kedalaman ~200m). Indonesia memiliki keanekaragaman hayati tinggi. Untuk menikmati tempat lebih dalam, kapal selam dengan jendela kaca perlu disediakan bagi wisatawan yang tidak bisa menyelam.</p>
+            <div class="question-box">
+                <p><strong>Soal 2:</strong> Sesuai dengan bacaan, pernyataan di bawah ini yang merupakan opini penulis adalah..</p>
+                <p>B. Perlunya menyediakan kapal selam dengan jendela kaca bagi wisatawan.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>Pembahasan Soal 2</h2>
+            <div class="answer-box">
+                <p><strong>Jawaban: B</strong></p>
+                <p><strong>Pembahasan:</strong> Opini adalah saran atau pandangan pribadi penulis yang belum terjadi.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>TEMA 3 - Teks Soal 3 (Paris & Restoran Tanah Air)</h2>
+            <p>Bagi warga Paris, musim semi berarti perubahan gaya. Paris adalah panggung dunia di mana warganya hidup dengan penuh gaya. Restoran Tanah Air di Rue de Vaugirard adalah pulau kecil terpencil yang menyajikan makanan Indonesia dengan bumbu otentik (cengkih, jahe, serai, lengkuas). Bagi eksil politik Indonesia, ini seperti "Le Flore" mereka, tempat mengenang tanah air sebelum tahun 1965.</p>
+            <div class="question-box">
+                <p><strong>Soal 3:</strong> Manakah pernyataan berikut yang menunjukkan kebanggaan tokoh pada budaya?</p>
+                <p>B. Restoran Tanah Air menyajikan makanan Indonesia yang diolah serius dengan aroma bumbu dari Indonesia khas cengkih, jahe, serai, dan lengkuas.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>TEMA 3 - Teks Soal 4 - 5 (Sampah)</h2>
+            <p>Indonesia menghasilkan 11.330 ton sampah per hari. Kebiasaan membuang sampah sembarangan sulit diubah karena sudah mendarah daging dan pengaruh lingkungan. Banyak orang merasa tidak ada konsekuensi, padahal ada UU No. 18 Tahun 2008 yang melarang membuang sampah sembarangan.</p>
+            <div class="question-box">
+                <p><strong>Soal 4:</strong> Ide yang dapat kamu sampaikan dalam kampanye perumahan?</p>
+                <p>C. Ada petugas kebersihan yang mengambil sampai dua kali seminggu dan setiap 100 meter disediakan tempat sampah organik dan non organik beserta contoh gambarnya.</p>
+            </div>
+            <div class="question-box">
+                <p><strong>Soal 5:</strong> Apa yang dapat kamu lakukan di sekolah untuk mengubah pola pikir tersebut?</p>
+                <p>B. Membuang sampah di tempat sampah, bukan di meja, lantai, tanah, maupun area lainnya.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>TEMA 3 - Soal 6 (Tata Tulis Judul)</h2>
+            <div class="question-box">
+                <p><strong>Soal 6:</strong> Bagaimana penulisan judul "publik speaking yang paling sering digunakan di dunia kerja" yang benar?</p>
+                <p>A. Publik Speaking yang Paling Sering Digunakan di Dunia Kerja<br>B. Publik Speaking Yang Paling Sering Digunakan di Dunia Kerja<br>C. Publik Speaking Yang Paling Sering Digunakan Di Dunia Kerja<br>D. Publik Speaking yang Paling Sering di Gunakan di Dunia Kerja<br>E. Publik Speaking yang Paling Sering Digunakan Di Dunia Kerja</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>Pembahasan Soal 6</h2>
+            <div class="answer-box">
+                <p><strong>Jawaban: A</strong></p>
+                <p><strong>Pembahasan:</strong> Huruf kapital pada setiap kata, kecuali kata depan/hubung (yang, di) yang tidak di awal judul.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h1 style="margin-top: 15%;">Terima Kasih</h1>
+            <p style="text-align: center; font-style: italic; font-size: 1.5em; color: #7f8c8d;">"Literasi adalah kunci untuk membuka jendela dunia."</p>
+        </div>
+
+    </div>
+
+    <div class="controls">
+        <button id="prevBtn" onclick="prevSlide()" disabled>Sebelumnya</button>
+        <span id="slide-counter">Slide 1 dari 43</span>
+        <button id="nextBtn" onclick="nextSlide()">Selanjutnya</button>
+    </div>
+
+    <script>
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const counter = document.getElementById('slide-counter');
+        const slideSelect = document.getElementById('slideSelect');
+
+        // Fungsi untuk mengisi opsi dropdown secara otomatis dari judul slide
+        function initDropdown() {
+            slides.forEach((slide, index) => {
+                const titleElement = slide.querySelector('h1, h2, h3');
+                let titleText = titleElement ? titleElement.innerText : `Slide ${index + 1}`;
+                
+                // Potong judul jika terlalu panjang agar dropdown tidak melebar berlebihan
+                if(titleText.length > 45) {
+                    titleText = titleText.substring(0, 45) + '...';
+                }
+                
+                const option = document.createElement('option');
+                option.value = index;
+                option.text = `${index + 1}. ${titleText}`;
+                slideSelect.appendChild(option);
+            });
+        }
+
+        function updateSlide() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active');
+                if (index === currentSlideIndex) {
+                    slide.classList.add('active');
+                }
+            });
+
+            counter.innerText = `Slide ${currentSlideIndex + 1} dari ${slides.length}`;
+            
+            prevBtn.disabled = currentSlideIndex === 0;
+            nextBtn.disabled = currentSlideIndex === slides.length - 1;
+            
+            // Sinkronkan dropdown dengan slide saat ini
+            slideSelect.value = currentSlideIndex;
+        }
+
+        // Fungsi saat memilih slide dari dropdown
+        function jumpToSlide(index) {
+            currentSlideIndex = parseInt(index);
+            updateSlide();
+        }
+
+        function nextSlide() {
+            if (currentSlideIndex < slides.length - 1) {
+                currentSlideIndex++;
+                updateSlide();
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlideIndex > 0) {
+                currentSlideIndex--;
+                updateSlide();
+            }
+        }
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowRight') {
+                nextSlide();
+            } else if (event.key === 'ArrowLeft') {
+                prevSlide();
+            }
+        });
+
+        // Jalankan saat halaman dimuat
+        initDropdown();
+        updateSlide();
+    </script>
+</body>
+</html>
